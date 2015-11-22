@@ -1,0 +1,385 @@
+
+    <style>
+        @media all {
+            @font-face {
+                font-family:'HelveticaNeue-Bold';
+                src: url('img/HelveticaNeue-Bold_gdi.eot');
+                src: url('img/HelveticaNeue-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+                url('img/HelveticaNeue-Bold_gdi.woff') format('woff'),
+                url('img/HelveticaNeue-Bold_gdi.ttf') format('truetype'),
+                url('img/HelveticaNeue-Bold_gdi.otf') format('opentype'),
+                url('img/HelveticaNeue-Bold_gdi.svg#HelveticaNeue-Bold') format('svg');
+                font-weight: 700;
+                font-style: normal;
+                font-stretch: normal;
+                unicode-range: U+0-10FFFF;
+            }
+
+            @font-face {
+                font-family:'ALSEkibastuz-Heavy';
+                src: url('img/ALSEkibastuz-Heavy_gdi.eot');
+                src: url('img/ALSEkibastuz-Heavy_gdi.eot?#iefix') format('embedded-opentype'),
+                url('img/ALSEkibastuz-Heavy_gdi.woff') format('woff'),
+                url('img/ALSEkibastuz-Heavy_gdi.ttf') format('truetype'),
+                url('img/ALSEkibastuz-Heavy_gdi.otf') format('opentype'),
+                url('img/ALSEkibastuz-Heavy_gdi.svg#ALSEkibastuz-Heavy') format('svg');
+                font-weight: 900;
+                font-style: normal;
+                font-stretch: normal;
+                unicode-range: U+0020-2122;
+            }
+
+        }
+
+        .b-banner{
+            background: -webkit-linear-gradient(#f7f7f7, #e2e8eb);
+            background: -o-linear-gradient(#f7f7f7, #e2e8eb);
+            background: -moz-linear-gradient(#f7f7f7, #e2e8eb);
+            background: linear-gradient(#f7f7f7, #e2e8eb);
+            padding: 0 20px;
+            box-sizing: border-box;
+            min-width: 940px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            background:#e9edef;
+            text-align: left;
+            line-height: normal;
+        }
+
+        .b-banner__title-icon,
+        .b-banner__title-text,
+        .b-banner__title-logo,
+        .b-menu__item-icon,
+        .b-menu__item-title,
+        .b-banner__left,
+        .b-banner__right,
+        .b-banner__social-title,
+        .b-banner__social-icon{display: inline-block; vertical-align: middle;}
+
+        .b-banner__title{font-family: ALSEkibastuz-Heavy; font-size: 27px; height: 100px; display: block; overflow: hidden;}
+        .b-banner__title-item{opacity: 0; position: absolute; left: 20px; right: 220px; line-height: normal;}
+        .b-banner__title-icon{width: 60px; padding-top: 66px; background-repeat: no-repeat; background-position: center;  background-size: 0% 0%; margin: 16px 20px 16px 0;}
+        .b-banner__title-text{ color: #0066b3; width: 85%}
+        .b-banner__title-logo{width: 173px; height: 50px; margin: 24px 51px 24px 36px; background-repeat: no-repeat; background-size: 100% auto; position: absolute; right: 0;}
+
+
+        .b-banner__inner{height: 0; position: relative; display: none;}
+        .b-banner__left, .b-banner__right{ vertical-align: top; opacity: 0;}
+        .b-banner__left{}
+        .b-banner__right{text-align: right; float: right;}
+
+
+        .b-banner__menu{font-family: HelveticaNeue-Bold;}
+        .b-banner_t_auto .b-banner__menu{margin-top: -15px;}
+        .b-menu__item{margin-bottom: 7px;}
+        .b-menu__item-link{}
+        .b-menu__item-icon{width: 31px; padding-top: 34px; margin-right: 4px; background-repeat: no-repeat;}
+        .b-menu__item-title{ font-size: 16px; color: #0066b3; cursor: pointer;}
+
+
+        .b-menu__item-list{padding: 0 0 0 39px; max-width: 380px; display: none; margin: 0;}
+        .b-menu__item-point{list-style: none; margin-bottom: 5px; position: relative;}
+        .b-menu__item-number{background: #0066b3; border-radius: 50%; color: #fff; padding: 3px 5px; font-size: 10px;
+            line-height:10px; position: absolute; }
+        .b-menu__item-text{font-family: Helvetica; font-size: 12px; color:#333333; padding: 3px 0 0 22px; display: inline-block; vertical-align: top;}
+
+        .b-banner__button{}
+        .b-banner__button-link{padding: 12px 43px; background: #0066b3; color: #fff; font-family: HelveticaNeue-Bold; font-size: 19px; border: 1px solid #99c2e1; display: inline-block; text-decoration: none;}
+        .b-banner__button-link:hover{background: #ef2e56; border-color: #f9abbb; text-decoration: none; color: #ffffff}
+
+
+        .b-banner__image-link{ width: 391px; height: 220px; display: block; border: 8px solid #f7f7f7;}
+        .b-banner__image-link:hover, .b-banner__image-link:active{ text-decoration: none !important; }
+        .b-banner__image{width: 100%; height: auto; }
+        .b-banner__social{margin-top: 25px;}
+        .b-banner__social-title{margin-right: 28px; font-family: Helvetica; font-size: 13px;}
+        .b-banner__social-icon{width: 21px; padding-top: 20px; margin-right: 3px;}
+
+        .b-banner__button,  .b-banner__social{position: absolute; bottom: 20px;}
+
+        .b-color-red{color:#ef2e56 !important;}
+        .b-icon-none{width: 0; margin: 16px 0 16px -10px;}
+        .b-item-selected .b-menu__item-title{color:#ef2e56 !important;}
+        .b-item-selected .b-menu__item-list{display: block;}
+
+        .b-icon__border{background-image: url(img/icon__border.png);}
+        .b-icon__debtor{background-image: url(img/icon__debtor.png);}
+        .b-icon__police{background-image: url(img/icon__police.png);}
+        .b-icon__fine{background-image: url(img/icon__fine__blue.png);}
+        .b-icon__fine__big{background-image: url(img/icon__fine.png);}
+        .b-icon__update__big{background-image: url(img/icon__update.png);}
+        .b-icon__reg__big{background-image: url(img/icon__reg.png);}
+        .b-icon__tax__big{background-image: url(img/icon__tax.png);}
+
+        .b-item-selected .b-icon__fine{background-image: url(img/icon__fine__red.png);}
+        .b-icon__tax{background-image: url(img/icon__tax__blue.png);}
+        .b-item-selected .b-icon__tax{background-image: url(img/icon__tax__red.png);}
+        .b-icon__law{background-image: url(img/icon__law__blue.png);}
+        .b-item-selected .b-icon__law{background-image: url(img/icon__law__red.png);}
+        .b-icon__update{background-image: url(img/icon__update__blue.png);}
+        .b-item-selected .b-icon__update{background-image: url(img/icon__update__red.png);}
+        .b-icon__reg{background-image: url(img/icon__reg__blue.png);}
+        .b-item-selected .b-icon__reg{background-image: url(img/icon__reg__red.png);}
+
+        .b-image__logo{background-image: url(img/image__logo.png); cursor: pointer;}
+        .b-icon__fb{background-image: url(img/icon__fb.png);}
+        .b-icon__vk{background-image: url(img/icon__vk.png);}
+        .b-icon__tw{background-image: url(img/icon__tw.png);}
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function(e){
+            $(function () {
+                var gos = {
+                    indicator: false,
+                    animateSpeed: 200,
+                    animatePause: 2000,
+                    cloneNode: null,
+                    element: null,
+                    lastElement: null,
+                    bannerVideo: $('.b-banner__image-link')[0],
+                    menuItem: $('.b-menu__item'),
+
+                    init : function () {
+
+                        var navTimers = [];
+                        $( ".b-banner" ).hover(
+                                function () {
+                                    $('.b-banner__title-item:last').css({opacity: 0});
+                                    var id = jQuery.data( this );
+                                    var $this = $( this );
+                                    navTimers[id] = setTimeout( function() {
+
+                                        gos.showInfo();
+
+                                        navTimers[id] = "";
+                                    }, 1000 );
+                                },
+                                function () {
+                                    $('.b-banner__title-item:last').css({opacity: 0});
+                                    var id = jQuery.data( this );
+                                    if ( navTimers[id] != "" ) {
+                                        clearTimeout( navTimers[id] );
+                                    } else {
+
+                                        gos.hideInfo();
+                                    }
+                                }
+                        );
+
+                        gos.menuItem.hover(
+                                function(){
+                                    gos.menuItem.removeClass("b-item-selected");
+                                    $(this).addClass("b-item-selected");
+                                },
+                                function(){
+                                    $(this).removeClass("b-item-selected");
+                                });
+
+                        $(".b-banner__inner").css({display: 'none'});
+                        gos.lastElement = $('.b-banner__title-item').eq(-1).clone();
+                        this.showTitle();
+                    },
+
+                    showTitle: function(){
+
+                        gos.element = $('.b-banner__title-item:first');
+                        gos.cloneNode = gos.element.clone();
+                        if(!gos.indicator){
+                            $(gos.element).animate({
+                                opacity: 1
+                            }, gos.animateSpeed, function(){
+                                setTimeout(function(){
+                                    if(!gos.indicator){
+                                        gos.hideTitle();
+                                    }
+
+                                }, gos.animatePause);
+                            }).children(".b-banner__title-icon").animate({
+                                backgroundSize: '100%'
+                            }, gos.animateSpeed);
+
+                            $(gos.element).children(".b-banner__title-text").animate({
+                                marginTop: 0
+                            }, gos.animateSpeed)
+                        }
+                    },
+
+                    hideTitle: function(){
+                        $(gos.element).children(".b-banner__title-icon").animate({
+                            backgroundSize: '0%',
+                            opacity: 0
+                        }, gos.animateSpeed);
+
+                        $(gos.element).children(".b-banner__title-text").animate({
+                            paddingTop: 30,
+                            opacity: 0
+                        }, gos.animateSpeed, function(){
+                            $(this).parent().remove();
+                            gos.addClone();
+                            if(!gos.indicator){
+                                gos.showTitle();
+                            }
+                        });
+                    },
+
+                    showInfo: function(){
+                        gos.indicator = true;
+                        gos.bannerVideo.play();
+                        gos.addVolume();
+
+                        $('.b-banner__title-item:first').animate({opacity: 0}, gos.animateSpeed);
+                        $('.b-banner__title-item:last').animate({opacity: 1}, gos.animateSpeed * 2);
+
+                        $(".b-banner__inner").css({display: 'block'}).animate({
+                            minHeight: 280,
+                            paddingBottom : 20
+                        }, 500, function(){
+                            $(".b-banner__left, .b-banner__right").css({'opacity': 1});
+                        });
+                    },
+
+                    hideInfo: function(){
+                        gos.indicator = false;
+                        gos.bannerVideo.pause();
+                        $('.b-banner__title-item:last').css({opacity: 0});
+                        $(".b-banner__left, .b-banner__right").css({'opacity': 0});
+                        $(".b-banner__inner").css({
+                            display: 'none',
+                            height: 0,
+                            paddingBottom : 0
+                        });
+                        if(!gos.indicator){
+                            gos.hideTitle();
+                        }
+                    },
+
+                    addClone: function(){
+                        $('.b-banner__title-item').eq(-1).before(gos.cloneNode);
+                    },
+
+                    addVolume: function () {
+                        gos.bannerVideo.volume = 0;
+
+                        var timerVolume = setInterval(function() {
+
+                            if (gos.bannerVideo.volume < 0.9){
+                                gos.bannerVideo.volume += 0.1;
+                            } else {
+                                clearInterval(timerVolume);
+                            }
+
+                        }, 500);
+                    }
+
+                };
+                gos.init();
+            });
+
+        }
+    </script>
+
+	<div class="b-banner">
+		<div class="b-banner__title">
+			<div class="b-banner__title-item">
+				<span class="b-banner__title-icon b-icon__border"></span>
+				<span class="b-banner__title-text"><span class="b-color-red">Как</span> не застрять на границе</span>
+			</div>
+			<div class="b-banner__title-item">
+				<span class="b-banner__title-icon b-icon__debtor"></span>
+				<span class="b-banner__title-text"><span class="b-color-red">Как</span> не оказаться в должниках</span>
+			</div>
+			<div class="b-banner__title-item">
+				<span class="b-banner__title-icon b-icon__police"></span>
+				<span class="b-banner__title-text"><span class="b-color-red">Как</span> не встретить приставов на пороге</span>
+			</div>
+			<div class="b-banner__title-item">
+				<span class="b-banner__title-icon b-icon-none"></span>
+				<span class="b-banner__title-text"><span class="b-color-red">Будьте в расчете</span>  с государством</span>
+			</div>
+			<a target="_blank" href="http://beta.gosuslugi.ru?utm_source=mail_sp&utm_medium=special&utm_term=2015_1&utm_content=logo&utm_campaign=vraschete" class="b-banner__title-logo b-image__logo"></a>
+		</div>
+		<div class="b-banner__inner">
+			<div class="b-banner__left">
+				<div class="b-banner__menu">
+					<div class="b-menu__item b-item-selected">
+						<span class="b-menu__item-link">
+							<span class="b-menu__item-icon b-icon__fine"></span>
+							<span class="b-menu__item-title">Проверьте и оплатите штрафы ГИБДД</span>
+						</span>
+						<ul class="b-menu__item-list">
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">1</span>
+								<span class="b-menu__item-text">Введите на портале номер автомобиля и водительского удостоверения</span>
+							</li>
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">2</span>
+								<span class="b-menu__item-text">Узнайте о наличии штрафов ГИБДД и парковки</span>
+							</li>
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">3</span>
+								<span class="b-menu__item-text">Оплатите штраф прямо на портале и получите квитанцию</span>
+							</li>
+						</ul>
+					</div>
+					<div class="b-menu__item">
+						<span class="b-menu__item-link">
+							<span class="b-menu__item-icon b-icon__tax"></span>
+							<span class="b-menu__item-title">Проверьте и оплатите задолженность по налогам</span>
+						</span>
+						<ul class="b-menu__item-list">
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">1</span>
+								<span class="b-menu__item-text">Введите на портале свой ИНН</span>
+							</li>
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">2</span>
+								<span class="b-menu__item-text">Узнайте о наличии долгов по налогу на имущество или транспорт</span>
+							</li>
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">3</span>
+								<span class="b-menu__item-text">Оплатите задолженность прямо на портале и получите квитанцию</span>
+							</li>
+						</ul>
+					</div>
+					<div class="b-menu__item">
+						<span class="b-menu__item-link">
+							<span class="b-menu__item-icon b-icon__law"></span>
+							<span class="b-menu__item-title">Проверьте и оплатите судебную задолженность</span>
+						</span>
+						<ul class="b-menu__item-list">
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">1</span>
+								<span class="b-menu__item-text">Выберите услугу проверки судебной задолженности</span>
+							</li>
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">2</span>
+								<span class="b-menu__item-text">Узнайте о наличии судебной задолженности и ее сумме</span>
+							</li>
+							<li class="b-menu__item-point">
+								<span class="b-menu__item-number">3</span>
+								<span class="b-menu__item-text">Оплатите задолженность прямо на портале и получите квитанцию</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="b-banner__button">
+					<a target="_blank" href="http://beta.gosuslugi.ru?utm_source=mail_sp&utm_medium=special&utm_term=2015_1&utm_content=knopka&utm_campaign=vraschete" class="b-banner__button-link">Проверьте долги</a>
+				</div>
+			</div>
+			<div class="b-banner__right">
+                <video poster="img/video.png"  controls="controls" class="b-banner__image-link">
+                    <source src="video/gos.mp4" type="video/mp4">
+                    <source src="video/gos.webm" type="video/webm">
+                    <source src="video/gos.ogg" type="video/ogg">
+                </video>
+				<div class="b-banner__social">
+					<span class="b-banner__social-title">Оставайтесь на связи с госуслугами в соцсетях</span>
+					<a href="https://www.facebook.com/new.gosuslugi" class="b-banner__social-icon b-icon__fb"></a>
+					<a href="http://vk.com/new.gosuslugi" class="b-banner__social-icon b-icon__vk"></a>
+					<a href="https://twitter.com/epgu" class="b-banner__social-icon b-icon__tw"></a>
+				</div>
+			</div>
+		</div>
+	</div>
